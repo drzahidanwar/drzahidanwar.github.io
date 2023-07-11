@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cryptography</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!--
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	-->
+	
+    <!-- Custom fonts for this template -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="clean-blog.min.css" rel="stylesheet">
+	
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+	<script src=
+	"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	<script type="text/javascript" src="quiz_functions.js"></script>
+	<script type="text/javascript" src="quiz_config.js"></script>
+  </head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+	  <li><a href="#secure">Secure Communication</a></li>
+      <li><a href="#formalization">Formalization</a></li>
+	  <li><a href="#kerckhoff">Kerckhoff's Principle</a></li>
+	  <li><a href="#discuss">Discussion</a></li>
+	  </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <body>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('images/crypto-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>A Cryptosystem</h1>
+              <h2 class="subheading">Formalization, use-cases and the Kerckhoff's Principle</h2>
+             </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+ 
+    <!-- Post Content -->
+    <article>
+      <div class="container" >
+        <div class="row">
+          <div class="col-lg-12 col-md-10 mx-auto text-justify" >
+		  		 <div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="
+					https://www.youtube.com/embed/CkBANEXNpBs"></iframe>
+				</div>
+				
+<div style="position: relative; top: -70px;" id="secure"></div> 
+		  <h2>Securing Communication using Cryptography</h2>
+		  <p>Cryptography has numerous applications but the most basic is its use in securing an insecure communication channel. In this section, this common use-case is detailed using a symmetric key cryptographic scheme.</p>
+			
+<p>Consider three users, Alice, Bob, and Oscar. Alice wishes to communicate with Bob privately but the channel between them is unfortunately insecure. Generically speaking this channel could be an Internet-based communication link, telephone lines, WiFi or even a cellular phone network. Oscar is a curious user who wants to listen in to Alice and Bob's conversation (see figure below).</p> 
+
+		  <div style="position: relative; top: -70px;" id="cryptography"></div> 
+		   <div class="col-4 mx-auto text-center">
+              <img  src="images/insecure-channel.png" width="50%" alt="">
+           <span class="caption text-muted">Communication over an insecure channel</span>
+		   </div>
+		   
+<p>Oscar is able to listen in to the channel in an authorized way (also called an eavesdropping attack) because he has access to the channel. This means he has access to the router in case of Internet-based communication or simply is monitoring the radio signals as in case of Wi-Fi communication.
+This common situation applies to any scenario where two or more communicating parties are sharing data that is of some worth to someone else. Examples of such data could be for example financial secrets, business plans or political decisions not yet shared with the public</p>
+
+		  		  <div class="col-4 mx-auto text-center">
+              <img  src="images/secure-channel.png" width="50%" alt="">
+           <span class="caption text-muted">Symmetric-key cryptosystem</span>
+			</div>
+<p>A cryptosystem built upon Symmetric cryptography provides an elegant solution in this regard. Using such a system Alice uses a symmetric algorithm to encrypt her message $x$, resulting in the ciphertext $y$. When Bob gets this ciphertext he performs a decryption operation on this message accordingly. The decryption and encryption operations are inverse processes of each other (see figure above). The obvious benefits to this assuming that the cipher algorithm itself is strong is that $y$ appears to random bits to an attacker like Oscar and he would not be able to extract any useful information from the communicated data.</p> 
+
+<div style="position: relative; top: -70px;" id="formalization"></div> 
+<h2>A Cryptosystem</h2>
+<p>We used the terms $x$, $y$ and $k$ to explain the figure above but in fact, they hold a special meaning in cryptography:</p>
+
+<p>A cryptosystem can be defined as a <b>tuple of 5 elements</b> namely $(E, D, X, K, Y)$. $X$ refers to all the plaintexts that this system can consume, the set of keys is referred to as $K$, $Y$ is accordingly the ciphertexts set, $E: X \times K \rightarrow Y$ is the set of cipher algorithms, and finally, $D: Y \times K \rightarrow X$ is the set of deciphering algorithms.</p>
+
+<div class="panel panel-success">
+<div class="panel-heading">PARTICIPATION ACTIVITY: Symmetric Cryptosystem</div>
+<div class="panel-body"><div class="col-xs-12"><small>
+<script type="text/javascript">
+  renderQuiz(0,1);
+</script></small>
+</div>
+</div></div>
+
+			
+		    <div style="position: relative; top: -70px;" id="kerckhoff"></div> 
+		  	<h2>Kerckhoff's Principle</h2>
+			<p>In the 19th century, a renowned cryptographer by the name of Auguste Kerckhoffs  stated that a <i>cryptosystem should be secure even if everything about the system, except the key, is public knowledge</i>. This later become widely recognized as the <b>"Kerckhoff's Principle"</b> and became widely embraced by cryptographers.</p> 
+
+			<p>Kerckhoffs's principle was reformulated by <b>Claude Shannon</b> who asserted that <b>"the enemy knows the system"</b>. This design principle states that systems should be designed with the expectation that the attacker will instantly acquire complete knowledge about them. This reformulation is also called <b>Shannon's maxim</b>. The idea is that if the designer bases the security on the fact that the user is ignorant of the system's internal structure then an expert user can break the security mechanism. This concept is also called by some as <b>"security through obscurity".</b> </p>
+
+			<div class='row'>
+    <div class='col-sm-2'></div>
+    <div class='col-sm-8'>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://www.youtube.com/embed/h66tRLJ8w1A?modestbranding=1&showinfo=0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class='col-sm-2'></div>
+</div>
+			
+			<p>Since cryptography is a highly mathematical subject, companies that  rely on cryptography for protection of customer or employee records tend to try and hide the algorithms they use. History has repeatedly proved that this practice doesn't improve the strength of the system's security. In fact, it tends to provide a false sense of security to a system that in reality has a weak implementation. This is especially true with state-of-the-art technologies today such as <b>virtualization</b> which makes it possible to easily <b>reverse engineer software</b> and their underlying algorithms. </p>
+
+			<p>Note that keeping the algorithm secret is not the same as keeping the cryptographic keys secret. The latter will not break Kirchoff's principle. In fact, keeping the keys in a safe and secure place is a good security practice.</p>
+			
+
+			<div  class="panel panel-success">
+            <div class="panel-heading">PARTICIPATION ACTIVITY 2: Kerckhoff's Principle</div>
+            <div class="panel-body">
+			<div class="col-xs-12"><div class="radio"><small>
+				<script type="text/javascript">
+				renderQuiz(2,2);
+			</script></small>
+			</div></div></div></div>
+			
+
+			<div style="position: relative; top: -70px;" id="discuss"></div>
+			<div  class="panel panel-primary">
+            <div class="panel-heading">DISCUSSION ACTIVITY: Research the following questions. </div>
+            <div class="panel-body">
+			<small>
+			<ol>
+			<li>Based on the definition of a cryptosystem write down the 5-tuple representation of the following ciphers:
+			<ol type="a">
+			&nbsp;
+			<li>Julius invents a new cipher which takes as plaintext input a string of alphabets (A through Z) and replaces each letter in the plaintext with another letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on.</li>
+			&nbsp;
+			<li>ROT-13 takes as plaintext input a string of alphabets (A through Z) and replaces each one by the letter 13 places further along in the alphabet, wrapping back to the beginning if necessary. A becomes N, B becomes O, and so on up to M, which becomes Z, then the sequence continues at the beginning of the alphabet.</li>
+			</ol>			
+			</li>
+			&nbsp;
+			&nbsp;
+			<li><b>(Socrative option available: Overview of a cryptosystem)</b> Consider the following scenario: 
+BestBank.com has set up an e-banking system. Customers connect to the banking server. The customer authenticates using either a password or a certificate and private key generated by an application from BestBank.com. Once the customer is authenticated against the banking server, he can view and update his account information. The client's access rights are checked on every transaction. BestBank.com hired a cryptographer to design a new encryption scheme that can be used to ensure the confidentiality and integrity of data communicated between the client and the server. It is keeping the information about the new algorithm secret to limit the information available to the attacker.
+&nbsp;
+<ol type="a">
+&nbsp;
+<li>Which cryptographic design principles does this scenario violate?</li>
+&nbsp;
+<li>How does this violation affect the security of the system? </li>
+&nbsp;
+<li>How would you change the design to make it follow the design principle? </li>
+</ol>
+</li>
+			
+			</div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+
+  </body>
+
+</html>

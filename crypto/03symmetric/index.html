@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cryptography</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!--
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	-->
+	
+    <!-- Custom fonts for this template -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="clean-blog.min.css" rel="stylesheet">
+	
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+	<script src=
+	"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	<script type="text/javascript" src="quiz_functions.js"></script>
+	<script type="text/javascript" src="quiz_config.js"></script>
+  </head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+	  <li><a href="">Home</a></li>
+	  <li><a href="#symmetric">Symmetric</a></li>
+      <li><a href="#speed">Speed</a></li>
+	  <li><a href="#scalability">Scalability</a></li>
+	  <li><a href="#group">Group Communication</a></li>
+	  <li><a href="#size">Size</a></li>
+	  <li><a href="#input">Input Type</a></li>
+	  <li><a href="#discuss">Discussion</a></li>
+	  </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <body>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('images/crypto-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Symmetric Cryptography</h1>
+              <h2 class="subheading">Working of Symmetric Cryptography and properties of interest.</h2>
+             </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+ 
+    <!-- Post Content -->
+    <article>
+      <div class="container" >
+        <div class="row">
+          <div class="col-lg-12 col-md-10 mx-auto text-justify" >
+
+		  		 <div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/m-PMfrd9OLk"></iframe>
+				</div>
+				
+<div style="position: relative; top: -70px;" id="symmetric"></div> 
+		  <h2>Symmetric Cryptography</h2>
+		  <p>Symmetric cryptography is also known as secret key or single key cryptography. In symmetric cryptography, both parties involved in the communication share the same key. In the example (below) Alice is taking her plain-text $M$, encrypting it with a secret key $k$ and transmitting the resulting ciphertext $C$. Bob is receiving that same ciphertext $C$, decrypting it with the same secret key $k$ and retrieving the same plain-text $M$ that Alice encrypted. The overall operation can be mathematically be represented as follows:</p>
+		  $$E_k(M) = C$$ $$D_K(C) = M$$
+		  <p>This is the reason this operation is termed symmetric because the two keys are exactly the same. This is in stark contrast to asymmetric encryption  where the encryption and decryption keys are different.</p> 
+
+		  <div style="position: relative; top: -70px;" id="cryptography"></div> 
+		   <div class="col-4 mx-auto text-center">
+              <img  src="images/symmetric.png" width="85%" alt="">
+           <span class="caption text-muted">Symmetric Key Cryptography Scenario</span>
+		   </div>
+		   
+		   <p>In some types of symmetric encryption, the encryption key and decryption key may be different. However, it is possible to easily derive one key from another. In the example above if Alice gave the encryption key to Bob, he can easily derive the decryption key or vice versa. Although the two keys are not the same one can easily derive one from the other. This still counts as a symmetric encryption algorithm. </p>
+		   
+		   <p>Another way to think about symmetric encryption is that the encryption and decryption functions are inverse operations because the same key is being used on both sides.</p>
+		   
+		   $$D_k (E_k(M)) = M$$
+
+		   <div class="panel panel-success">
+<div class="panel-heading">PARTICIPATION ACTIVITY: Symmetric Cryptography</div>
+<div class="panel-body"><div class="container"><small>
+<script type="text/javascript">
+  renderQuiz(0,1);
+</script></small>
+</div>
+</div></div>
+
+		   <h2>Important Properties</h2>
+
+		   <p>There are several properties of symmetric encryption that we will touch upon.</p>
+<div style="position: relative; top: -70px;" id="speed"></div> 
+<h3>Speed</h3>
+<p>Theoretically, it is widely accepted that symmetric encryption is fast. Roughly symmetric encryption is a thousand times faster than asymmetric encryption with the same level of security. 
+</p>
+
+<div style="position: relative; top: -70px;" id="scalability"></div> 
+<h3>Scalability</h3>
+<p>The major problem with symmetric encryption revolves around key distribution issues. Consider that we have two parties A and B that want to communicate securely. When using a symmetric key scheme they need to have a secret called $K_{AB}$ which is a secret key shared between A and B. The problem stems from the fact that both sides need to have a copy of this key. $K_{AB}$ needs to be communicated using an external channel which is secure to avoid eavesdropping attacks. This is achieved using key distribution algorithms to be introduced later in the course. Consider now that we have a third party C (depicted in the left side of the figure below). C needs to communicate with both A and B. For this purpose she will need two keys: $K_{AC}$ and $K_{BC}$. Now A needs a new key which is $K_{AC}$ and B needs a new key which is $K_{BC}$. So far so good. Everyone needs only two keys. What about now we have D (depicted on the right side in the figure below). If D needs to talk to A, B and C then everybody needs 3 keys.</p> 
+
+		   <div class="col-4 mx-auto text-center">
+              <img  src="images/key-distribution.png" width="85%" alt="">
+           <span class="caption text-muted">Exponential increase in the number of keys based on number of communicating entities (figure left 2 keys per person and figure right 3 keys per person).</span>
+			</div>
+			
+<p>Let us generalize this problem to see how many total are needed for $N$ people. Everyone has $N-1$ keys and every key is shared by two persons only which gives us the total keys required as $\frac{N(N-1)}{2}$. If $N$ is really large it will require $\approx \frac{N^2}{2}$.</p>
+
+		   <div class="panel panel-success">
+<div class="panel-heading">PARTICIPATION ACTIVITY: Properties of Symmetric Cryptography</div>
+<div class="panel-body"><div class="container"><small>
+<script type="text/javascript">
+  renderQuiz(2,3);
+</script></small>
+</div>
+</div></div>
+
+<div style="position: relative; top: -70px;" id="group"></div> 
+<h3>Group Communication</h3>
+<p>There exist many scenarios where a user needs to communicate securely to not just one user as in the case discussed above but to a group of users. Common examples include podcasts, video conferencing, remote corporate meetings and social media groups. For example, consider the figure below where A wants to send the same message to both B and C. A needs to encrypt the msg with $K_{AB}$ and then encrypt the same message with $K_{AC}$. So now what we are facing is that if one wants to send a message to $X$ people we need to encrypt $X$ copies of the same message with different keys which is obviously not a very scalable approach.  </p> 
+
+		   <div class="col-4 mx-auto text-center">
+              <img  src="images/multicast.png" width="35%" alt="">
+           <span class="caption text-muted">Sending a message to <b>X</b> parties using symmetric cryptography requires encrypting <b>X</b> copies of the message each with a different key.</span>
+			</div>
+			
+<div style="position: relative; top: -70px;" id="size"></div> 
+<h3>Size Relation between plaintext and ciphertext</h3>
+<p>There exists a one to one mapping in symmetric cryptography between the plaintext and ciphertext. The ciphertext usually has the same or longer length as the plaintext. It is very hard for the ciphertext to be shorter than the plaintext unless one is conducting some sort of compression on the information.</p>
+
+<div style="position: relative; top: -70px;" id="input"></div> 
+<h3>Input Type</h3>
+<p>We have established that a block of plaintext which is meaningful for example an English sentence such as "Attack at dawn" can be encrypted using symmetric cryptography. However what if a user generates a random sequence of characters without any meaning and provides that as input to the encryption algorithm? Will that random sequence be encrypted? The answer is <i>yes</i>. The encryption is applied as a result of an algorithm or a procedure. As long as the inputs meet the requirements of the algorithm it should work.</p>
+<p>For example, the <b>DES</b> symmetric cipher requires the input to be in chunks of 8-byte blocks. DES does not really care if it is a meaningful sentence like “I love you” which is 8 characters if you don’t count the space or it is something incorrect like “Chewbacca is mooing”. DES will simply encrypt the message. Moreover, if the  correct key is applied during the decryption the original content should be properly recovered. We emphasize this point here because later when we are dealing with key distribution procedures we will see that this property can lead to malicious attacks.   
+</p>
+
+			<div style="position: relative; top: -70px;" id="discuss"></div>
+			<div  class="panel panel-primary">
+            <div class="panel-heading">DISCUSSION ACTIVITY: Research the following questions. </div>
+            <div class="panel-body">
+			<small>
+			<b>(Socrative option available for 1 and 2: Symmetric Cryptography)</b>
+			<ol>
+
+			<li><p>Alice has a large text file (try a file at least 200KB). She wants to apply two operations to the file: compression (zip), and AES encryption. Please answer: which operation should she apply to the file first? To answer this question, I will need you to do two steps:</p>
+			<ol>
+			<li type="I">Generate (or download) a large text file (at least 200KB). Locate two software: one for AES encryption and one for compression. Now to the same source file, you apply the two operations in different orders. In the end, you will get two result files: one is encrypted then zipped, and the other is zipped then encrypted.</li>
+
+			<li>Now write down the file size of all five files: the original file, two intermediate files, and two final result files. Which result file is smaller?
+			  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Encrypt-then-compress. AES$\rightarrow$ZIP</th>
+        <th>Compress-then-encrypt. ZIP$\rightarrow$AES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Original (test.txt) Size: __KB </td>
+        <td>Original (test.txt) Size: __KB </td>
+      </tr>
+      <tr>
+        <td>Encrypted (test.txt.aes) Size: __KB </td>
+        <td>Zipped (test.7z) Size: __KB</td>
+      </tr>
+      <tr>
+        <td>Enc and Zip (test.txt.aes.7z) Size: __KB</td>
+        <td>Zip and Enc (test.7z.aes) Size: __KB</td>
+      </tr>
+    </tbody>
+  </table>
+			</li>
+			
+			</ol>
+			
+			<p>Please explain why the zipped-then-encrypted file is smaller in size. We do not restrict you to any specific software. But in my experiment, I use 7-zip and AEScrypt, both of which are free.</p>
+			
+			<p>When you discuss the size of the files, please consider the following question. Which type of files has a better compression ratio? A file that contains a lot of repeated patterns? Or a file that looks totally random? Which type of files contains higher randomness (or higher entropy): a text file or an encrypted file?</p></li>
+			
+			<li><p>There are two types of encryption algorithms: symmetric key encryption and asymmetric key encryption (also called public-key encryption). To reach the same level of security, the key length for different algorithms can vary greatly. Please answer: to reach the same level of security as the 128 bit key for symmetric encryption algorithms, how long does the key need to be for RSA algorithm, and how long does the key need to be for elliptic curve cryptography?</p> 
+				
+			<p><b>Hint:</b> You can search in Wikipedia and you will find the answers. This is to help you to understand the security comparison between the two encryption algorithm types. Remember, asymmetric encryption algorithms are not always more secure than their symmetric companions.</p> 
+				</li>
+			</ol>
+
+			</div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+
+  </body>
+
+</html>

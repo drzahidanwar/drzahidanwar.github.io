@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cryptography</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!--
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	-->
+	
+    <!-- Custom fonts for this template -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+	<link href="prism.css" rel="stylesheet" type="text/css" />
+    <link href="clean-blog.min.css" rel="stylesheet">
+	<script src="prism.js" type="text/javascript"></script>
+	<script type="text/javascript" src="quiz_functions.js"></script>
+	<script type="text/javascript" src="quiz_config.js"></script>
+  </head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+	  <li><a href="#cryptography">Cryptography</a></li>
+      <li><a href="#applications">Applications</a></li>
+	  <li><a href="#terminology">Terminology</a></li>
+	  <li><a href="#classification">Classification</a></li>
+	  <li><a href="#considerations">Considerations</a></li>
+	  <li><a href="#discussion">Discussion</a></li>
+	  </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <body>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('images/crypto-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Introduction to Cryptography</h1>
+              <h2 class="subheading">Applications, terminology and limitations</h2>
+             </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+ 
+    <!-- Post Content -->
+    <article>
+      <div class="container" >
+        <div class="row">
+          <div class="col-lg-12 col-md-10 mx-auto text-justify" >
+		  		<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="
+					https://www.youtube.com/embed/755CdLPbX5s"></iframe>
+				</div>
+		  <div style="position: relative; top: -70px;" id="cryptography"></div> 	<h2>Cryptography</h2>
+			<p>According to Encyclopedia Britannica, cryptography is defined as:</p>
+			<blockquote class="blockquote">
+			"Practice of <b>enciphering</b> and <b>deciphering</b> of messages in <b>secret code</b> in order to render them unintelligible to all but the intended receiver."
+			</blockquote>
+			
+		  	<div class="row">
+				<div class="col-lg-8">	
+					<p>In short, <b>cryptography</b> is the science of sending secret messages. People have been communicating using secret messages for thousands of years. Soldiers in the field use them so the enemy won’t figure out their battle plans; friends use them when they want to keep their notes private; and, in the modern day, people shopping on the Internet use them to keep their bank card numbers secret.</p>
+					
+					<p>The commonly used term “secret code” refers to the method for changing a message into a secret message. A very simple secret code was used in Boston in 1776 to communicate a message to Paul Revere about how the British were coming. The code was based on the number of lanterns hung in the church bell tower: “One if by land, two if by sea.”</p>
+				</div>	  
+
+				<div class="col-lg-4">	
+					<div>
+						<img  src="images/church.jpg" width="100%" alt="">
+						<span class="caption text-muted">The Old North Church at Boston, North End was the place from where the "One if by land, two if by sea" signal is reported to have been sent. (source: www.destination360.com/north-america/us/massachusetts/boston/old-north-church) </span>
+					</div>
+				</div>
+			</div>		
+			
+		    <div style="position: relative; top: -70px;" id="applications"></div> 
+		  	<h2>Applications</h2>
+			<p>Cryptography plays a role in everything ranging from secure online payment systems and social media applications to smartphones, ATMs, automobiles and even health care implants. The Allies code-breaking efforts of the cryptographic Enigma machine used by the Germans during world war II is said to have changed the tide of the war. More recently we are witnessing even more promising use cases for cryptography like the blockchain for documenting data on the Internet and vehicle-to-vehicle communications. This is in stark contrast to the past, where cryptography was exclusively used by the government and military for secure communications or by financial institutions for storing account information. Due to the use of crypto-algorithms in every walk of life, every Information Technology user needs to be familiar with how cryptography works and its practical applications.</p>
+			<div class="col-4 mx-auto text-center">
+				<img  src="images/applications.png" width="75%" alt="">
+				<span class="caption text-muted">Everyday applications of cryptography </span>
+			</div>
+			<p>
+			Unfortunately, cryptography can be used for bad as well as for good. Among other reasons such as human error, data breaches due to cryptographic failures or lack of it are dominating headlines in recent years. The figure below depicts the documented cases of records and data breaches that were compromised in the USA from 2005 to 2017. Interestingly, this number has reached the highest figures to date in the year 2017 with approximately 179M records compromised.</p>
+			
+			<div class="col-4 mx-auto text-center">
+				<img  src="images/databreaches.png" width="50%" alt="">
+				<span class="caption text-muted">The number of records and data breaches compromised between 2005-2017. (source: statista).
+			</span>
+			</div>
+			
+			<p>Cryptolocker, Ghost miner, Heartbleed, Wannacry, Backoff are the scary names of some recent software bugs and applications that directly use cryptography for evil purposes.
+			</p>
+			<p>
+			Cryptology is a cross-cutting discipline encompassing concepts from mathematics, electrical engineering and computer science. It is a highly evolving field, with a rapid pace of development. In the last three decades, cryptography has made advances in theory and there is a much better understanding of security techniques and the manner in which we can prove our algorithms to be secure. In applied cryptography, the world is witnessing advancements with older algorithms being broken and retired and new ones being adopted.</p>
+
+			<div  class="panel panel-success">
+            <div class="panel-heading">PARTICIPATION ACTIVITY 1: Cryptography Applications</div>
+            <div class="panel-body">
+			<div class="container"><div class="radio"><small>
+				<script type="text/javascript">
+				renderQuiz(0,1);
+			</script></small>
+			</div></div></div></div>
+			
+			<div style="position: relative; top: -70px;" id="terminology"></div> 
+		  	<h2>Terminology</h2>
+
+			<p>In cryptography, the <b>cryptographic algorithm</b> or simply algorithm for short is used to mean a particular type of <b>secret code</b> that changes each letter of a message into another letter or symbol. A system that relies on one or more <b>algorithms</b> to implement a particular security service is called a <b>cryptosystem.</b> Generally, a cryptosystem constitutes algorithms of three main kinds. (1) Algorithms for <b>key generation</b>, (2) for <b>encryption</b>, and (3) for <b>decryption</b>. <b>Keys</b> also called <b>passphrases</b> are parameters of pieces of information that is responsible for the <i>functional output</i> of the cryptographic algorithm and can be of varying sizes. The term <b>cipher</b> is typically employed to indicate a <b>pair of encryption and decryption algorithms</b>.</p>
+
+			<div  class="panel panel-success">
+            <div class="panel-heading">PARTICIPATION ACTIVITY 2: Definitions</div>
+            <div class="panel-body">
+			<div class="container"><div class="radio"><small>
+				<script type="text/javascript">
+				renderQuiz(2,2);
+			</script></small>
+			</div></div></div></div>
+			
+			<div style="position: relative; top: -70px;" id="classification"></div> 
+			<h2>Classification</h2>
+			A bird's eye view of the field of cryptography can be seen in the figure below.
+
+			<div class="col-4 mx-auto text-center">
+              <img  src="images/classification.png" width="85%" alt="">
+				<span class="caption text-muted">Overview of the field</span>
+			</div>
+
+			<p><b>Cryptography</b> is a subbranch of <b>cryptology</b>. The other branch is called <b>cryptanalysis</b>. Cryptography refers to the science of writing secrets with the aim of obscuring the message's meaning. The art and science of breaking cryptosystems are referred to as Cryptanalysis.</p> 
+			
+			<h3>Cryptanalysis</h3>
+			<p>Cryptanalysis also called <b>code breaking</b> is not just performed by hackers but conducted by cryptanalysts and academic researchers alike. If people who try to break ciphers didn't exist then we would never know whether they are really secure or not. Cryptanalysis is an important part of cryptology because it the sole way to prove that a cryptosystem is secure. </p>
+			
+			<p>Cryptanalysis can be divided into three main parts: <b>classical</b>, <b>implementation based</b> and <b>social engineering</b>. Classical attacks are further subdivided into <b>mathematical attacks</b>, that attempt to break the underlying mathematics and the cipher's structure and <b>brute-force</b> attacks, which consider the cipher algorithm a black box and enumerate all key combinations for gaining access.</p>
+			
+			<p>Attacks that target the underlying implementation also called <i>fuzzing</i> look for weaknesses or bugs in the way the cryptosystem has been implemented and typically require physical access to it. Social Engineering attacks are historically the most successful and include techniques such as <b>blackmail</b>, <b>bribe</b>, <b>trickery</b> and <b>espionage</b> to break a cryptosecure system that involves humans.</p>
+
+			<h3>Cryptography</h3>
+
+			<p>Cryptography itself is composed of three main branches: <b>Symmetric Algorithms</b> is the most commonly known branch: parties that wish to communicate secretly employ a cipher and share a key to make that work. Symmetric cryptography was the only type known and employed throughout history up  until 1976. It still popular today for bulk data encryption and ensuring the integrity of messages.</p>
+			
+			
+			<p>Asymmetric cryptography is also known as public key cryptography is another kind of cipher invented in 1976 by Whitfield Diffie, Martin Hellman, and Ralph Merkle. In Asymmetric cryptography, a communicating party employs not just one but two keys.  There exists a <b>secret key</b>just like that in symmetric cryptography but also another key, known as a <b>public key</b>. Public key cryptography is important for security services such as <b>key establishment</b>, <b>digital signatures</b> and, classical data encryption.</p>
+			
+			<p><b>Cryptographic Protocols</b> are the application of cryptographic algorithms. Public key, as well as symmetric algorithms can be viewed as <b>building blocks</b> for constructing cryptosystems, for example, secure network communication. <b>Transport Layer Security (TLS)</b> a security protocol employed in all Web browsers, is one such cryptographic protocol. The third subbranch of cryptographic algorithms is <b>hash functions</b> however we will discuss them with symmetric ciphers because they share some common properties.</p>
+			
+			<p>In most practical applications that employ cryptography, a combination of symmetric, asymmetric and hash functions can be found. The reason for these hybrid schemes is that each family of algorithms has its own  specific strengths and weaknesses and using them together usually leads to a robust solution.</p>
+
+			<div  class="panel panel-success">
+            <div class="panel-heading">PARTICIPATION ACTIVITY 3: Classification</div>
+            <div class="panel-body">
+			<div class="container"><div class="radio"><small>
+				<script type="text/javascript">
+				renderQuiz(3,3);
+			</script></small>
+			</div></div></div></div>
+
+			<div style="position: relative; top: -70px;" id="considerations"></div> 			
+			<h2>Cryptographic Considerations for Secure System Design</h2>
+			<p>It is important to note that cryptography is a building block for our security approach and is not the ultimate solution to all security problems. Cryptography is only one aspect of cyber-security and there exist many other aspects of building a cryptosystem.</p>
+			
+			<p>Cryptography under many conditions builds upon some algorithms. History has shown that when people design crypto algorithms that think it is safe. However several years later it turns out that the algorithm made certain assumptions rendering it unsafe and in turn breaking all cryptosystems that rely on it. Furthermore, even if an encryption algorithm can be proved to be safe and it is shown that breaking the algorithm is beyond the computation capability know to man, eventually the algorithm needs to be translated into a computer program to be used in a cryptosystem. It is well known that when people implement code they are prone to embed bugs due to human error. One could end up using an insecure implementation of a secure cryptographic algorithm.</p>
+
+			<p>Last but not least the reason we say that cryptography is only a building block to implement security is that there exists no one-size-fits-all cryptographic solution. Instead, the solution must be tailored to the problem. Consider the domain of car manufacturing. If you buy the most expensive parts from factories and put them together to build the perfect car you may still not have the best car in the world. The reason being that one has to put the right part in the right place. The best or most expensive parts assembled in the wrong way will not give one the best car. It is the same rationale for cryptography. One can pick different components to build a security approach to make sure that critical information and infrastructure is secure. However, one would want the best or most feasible components and not the most expensive.</p>
+
+			<p>Consider the matter of choosing a particular key size in a cryptographic algorithm. One cannot say that a 2048 bit key will always be safer than a 1024 bits key. If the cryptographer is going to be using this algorithm to design a cell phone with limited computing power it may not be able to handle that large a key size. </p>
+
+			<div style="position: relative; top: -70px;" id="discussion"></div>
+			<div  class="panel panel-primary">
+            <div class="panel-heading">DISCUSSION ACTIVITY: Research the following questions.</div>
+            <div class="panel-body">
+			<small>
+			<ol>
+			<li>Write down three modern applications of cryptography not discussed in the notes.</li>
+			<li>What could possibly be an abuse of cryptography?</li>
+			<li>A cryptographer once stated that cryptography could provide complete security and that any other computer security controls were unnecessary. Why is he wrong? (<i>Hint</i>: Think of an implementation of a cryptosystem, and ask yourself what aspect(s) of the implementation can cryptography not protect.)</li>
+			<li><b>(Socrative option available: Introduction to Cryptography)</b> Some functionalities that cryptographic algorithms provide are (Confidentiality, Authentication, Integrity, and Non-repudiation). Give a real-world example of each of these functionalities.</li>
+			</ol>
+			</small>
+			</div></div>
+			
+			
+			</div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+
+  </body>
+
+</html>
